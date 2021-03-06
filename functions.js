@@ -28,3 +28,9 @@ exports.objToStrMap = (obj) => {
 exports.strMapToJson = (strMap) => JSON.stringify(strMapToObj(strMap))
 
 exports.jsonToStrMap = (jsonStr) => objToStrMap(JSON.parse(jsonStr))
+
+exports.getOneObjOfMap = (strMap, id) => {
+  let obj = Object.create(null)
+  obj[id] = strMap.get(id)
+  return obj;
+}
