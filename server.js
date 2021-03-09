@@ -9,10 +9,10 @@ var counters = new Map();
 let countersRouter = express.Router();
 
 // trace a supprimer
-app.use((req, res, next) => {
-        console.log(counters);
-        next();
-    });
+// app.use((req, res, next) => {
+//         console.log(counters);
+//         next();
+//     });
 
 app.use(morgan('dev'))
 app.use(express.json()) // for parsing application/json
@@ -69,10 +69,9 @@ countersRouter.route('/:id')
             res.status(500).json(error(`${req.params.id} is not a key`))
         }
     })
-
-app.listen(config.port, () => console.log('Started at ' + config.port))
-
 // jeu de test a supprimer
-counters.set('counter1', 100) 
-counters.set('counter2', 200)
-counters.set('counter3', 300)
+// counters.set('counter1', 100) 
+// counters.set('counter2', 200)
+// counters.set('counter3', 300)
+
+module.exports = app
