@@ -40,7 +40,6 @@ countersRouter.route('/:id')
     .put((req, res) =>{
         let value = parseInt(req.query.val)
         if(!Number.isInteger(value)) value=0
-        console.log(value)
         counters.set(req.params.id, parseInt(value))
         res.status(201).json(success(getOneObjOfMap(counters,req.params.id)))
     })
@@ -70,8 +69,8 @@ countersRouter.route('/:id')
         }
     })
 // jeu de test a supprimer
-// counters.set('counter1', 100) 
-// counters.set('counter2', 200)
-// counters.set('counter3', 300)
+counters.set('counter1', 100) 
+counters.set('counter2', 200)
+counters.set('counter3', 300)
 
 module.exports = app
