@@ -8,22 +8,22 @@ exports.error= (message) => ({
     status: 'error',
     message: message
 })
+// fonctions non utilisées a inclure dans couverture jest si utilisation
+// exports.strMapToObj = (strMap) => {
+//     let obj = Object.create(null)
+//     for (let [k,v] of strMap) {
+//       obj[k] = v;
+//     }
+//     return obj;
+// }
 
-exports.strMapToObj = (strMap) => {
-    let obj = Object.create(null)
-    for (let [k,v] of strMap) {
-      obj[k] = v;
-    }
-    return obj;
-}
-
-exports.objToStrMap = (obj) => {
-    let strMap = new Map();
-    for (let k of Object.keys(obj)) {
-      strMap.set(k, obj[k]);
-    }
-    return strMap
-}
+// exports.objToStrMap = (obj) => {
+//     let strMap = new Map();
+//     for (let k of Object.keys(obj)) {
+//       strMap.set(k, obj[k]);
+//     }
+//     return strMap
+// }
 
 exports.strMapToJson = (strMap) => JSON.stringify(strMapToObj(strMap))
 
